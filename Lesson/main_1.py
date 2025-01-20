@@ -1,6 +1,4 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-
 
 app = FastAPI()
 
@@ -23,3 +21,19 @@ async def news(first_name: str, last_name: str) -> dict:
 @app.get("/id")
 async def id_paginator(username: str = "Alex", age: int = 34) -> dict:
     return {"User": username, "Age": age}
+
+
+@app.get("/items/")
+async def read_items(skip: int = 0, limit: int = 10) -> dict:
+    items = [{"item_id": i} for i in range(skip, skip + limit)]
+    return {"items": items}
+
+
+@app.get("/items/new")
+async def read_new_items() -> dict:
+    return {"message": "This is a list of new items"}
+
+
+@app.get("/items/{item_id}")
+async def read_item(item_id: int) -> dict:
+    return {"item_id": item_id, "name": f"Item {item_id}"}
