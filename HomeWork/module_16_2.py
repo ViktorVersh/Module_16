@@ -1,11 +1,11 @@
 """
 Аннотация и валидация
 """
-from typing import Annotated
+from typing import Annotated  # из библиотеки typing импортируем Annotated
 
-from fastapi import FastAPI, Path
+from fastapi import FastAPI, Path  # из библиотеки fastapi импортируем класс FastAPI и метод Path
 
-app = FastAPI()
+app = FastAPI()  # создаем экземпляр класса FastAPI
 
 
 @app.get("/")
