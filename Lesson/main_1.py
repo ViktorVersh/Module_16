@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+
 app = FastAPI()
 
 
@@ -21,6 +22,7 @@ async def news(first_name: str, last_name: str) -> dict:
 @app.get("/id")
 async def id_paginator(username: str = "Alex", age: int = 34) -> dict:
     return {"User": username, "Age": age}
+
 
 
 @app.get("/items/")
