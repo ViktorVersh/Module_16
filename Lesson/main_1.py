@@ -1,0 +1,25 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+
+app = FastAPI()
+
+
+@app.get("/")
+async def welcome() -> dict:
+    return {"message": "Hello World"}
+
+
+@app.get("/user/A/B")
+async def news() -> dict:
+    return {"message": f"Hello Tester!"}
+
+
+@app.get("/user/{first_name}/{last_name}")
+async def news(first_name: str, last_name: str) -> dict:
+    return {"message": f"Hello {first_name} {last_name}"}
+
+
+@app.get("/id")
+async def id_paginator(username: str = "Alex", age: int = 34) -> dict:
+    return {"User": username, "Age": age}
