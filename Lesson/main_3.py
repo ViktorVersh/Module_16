@@ -17,14 +17,14 @@ async def get_message(message_id: str):
 
 
 @app.post("/message")
-async def create_message(message: str):
-    current_index = len(int(max(message_db, key=int)) + 1)
+async def create_message(message: str) -> str:
+    current_index = str(int(max(message_db, key=int)) + 1)
     message_db[current_index] = message
     return "Message created"
 
 
 @app.put("/message/{message_id}")
-async def update_message(message_id: int, message: str) -> str:
+async def update_message(message_id: str, message: str) -> str:
     message_db[message_id] = message
     return "Message updated."
 
