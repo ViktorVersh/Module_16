@@ -14,7 +14,7 @@ async def get_all_message() -> dict:
 async def get_message(message_id: str) -> dict:
     return message_db[message_id]
 
-@qapp.post("/message")
+@app.post("/message")
 async def create_message(message: str) -> dict:
     curent_index = len(int(max(message_db, key=int)) + 1)
     message_db[curent_index] = message
