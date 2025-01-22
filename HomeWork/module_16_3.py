@@ -13,7 +13,7 @@ users = {'1': 'Имя: Example, возраст:18'}  # Создаем слова
 async def get_users():
     """
     функция создает GET запрос по маршруту '/user'
-    :return: Словарь users
+    :return: dict users
     """
     return users
 
@@ -27,7 +27,7 @@ async def create_user(
     Функция добавления данных
     :param username:
     :param age:
-    :return:
+    :return: str
     """
     user_id = str(int(max(users, key=int)) + 1)
     users[user_id] = f"Имя: {username}, Возраст: {age}"
@@ -46,7 +46,7 @@ async def update_user(
     :param user_id:
     :param username:
     :param age:
-    :return:
+    :return: str
     """
     users[user_id] = f"Имя: {username}, Возраст: {age}"
     return f"User {user_id} has been updated"
@@ -59,7 +59,7 @@ async def delete_user(
     """
     Функция удаления данных по id
     :param user_id:
-    :return:
+    :return: str
     """
     users.pop(user_id)
     return f"User {user_id} has been deleted"
