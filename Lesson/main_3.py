@@ -3,7 +3,7 @@ from typing import Annotated
 
 app = FastAPI()
 
-message_db = {'0': "First post in FastApi"}
+message_db = {'1': "First post in FastApi"}
 
 
 @app.get("/")
