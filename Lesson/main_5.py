@@ -1,4 +1,4 @@
-from fastapi import FastAPI, status, Body, HTTPException
+from fastapi import FastAPI, Body, HTTPException
 from pydantic import BaseModel
 from typing import List
 
