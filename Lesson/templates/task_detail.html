@@ -4,6 +4,6 @@
 
 {% block content %}
     <h1>Детали задачи</h1>
-    <p><strong>Описание</strong></p> {{ task.description }}</p>
-    <p><strong>Статус</strong></p> {{ "Выполнена" if task.is_completed else "Не выполнена" }}</p>
+    <p><strong>Описание</strong></p> {{ task.description }}
+    <p><strong>Статус</strong></p> {{ "Выполнена" if task.is_completed else "Не выполнена" }}
 {% endblock %}
