@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block crud_container %}
+    <section class="container-fluid">
+        <h2 align="center"> Message </h2>
+        <br>
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                {% for message in messages %}
+                <Li class="list-group-item"> {{message.id}} <a href="/message/{{message.id}}">{{message.text}}</a>" </Li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}
